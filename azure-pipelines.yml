@@ -1,0 +1,16 @@
+trigger:
+- main  # Replace 'main' with your default branch name if needed
+
+pool:
+  vmImage: 'ubuntu-latest'  # Use a Linux-based agent
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.x'  # Install Python 3.x
+
+- script: |
+    python --version
+    python hello.py
+  displayName: 'Run Python script'
+
